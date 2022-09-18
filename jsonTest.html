@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <p id="demo">name : </p>
+        <p id="demo2">age : </p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+        <p id="demo7"></p>
+        <script>
+            var data = {
+                name : "james",
+                age : 20
+            }
+
+            var arr = [
+                "aaa", "bbb", "ccc"
+            ];
+
+            var objArray = [
+                {name : "홍길동", age : 30},
+                {name : "고길동", age : 40},
+                {name : "이길동", age : 50}
+            ];
+
+            var objArray2 = [
+                {name : "홍길동", age : 30, hobby : ["독서", "축구", "야구"]},
+                {name : "고길동", age : 40, hobby : ["코딩"]},
+                {name : "이길동", age : 50, hobby : ["여행", "체조", "공부", "축구"]}
+            ];
+
+            var demo = document.querySelector("#demo");
+            var demo2 = document.querySelector("#demo2");
+            var demo3 = document.querySelector("#demo3");
+            var demo4 = document.querySelector("#demo4");
+            var demo5 = document.querySelector("#demo5");
+            var demo6 = document.querySelector("#demo6");
+            var demo7 = document.querySelector("#demo7");
+
+            demo.innerHTML = data.name;
+            demo2.innerHTML = data.age;
+            demo3.innerHTML = arr[0];
+            demo4.innerHTML = objArray[0].name;
+
+            
+            var txt_objArray = JSON.stringify(objArray);
+            demo5.innerText = txt_objArray;
+            
+            var jTxt = '{"name" : "kkk", "age" : "10"}';
+
+            var obj = JSON.parse(jTxt);
+            demo6.innerText = obj.name;
+
+            demo7.innerText = objArray2[0].hobby[0];
+
+
+        </script>
+
+    </body>
+</html>
