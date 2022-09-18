@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //escape(), unescape()
+        //아스키문자에 해당하지 않는 문자들을 유니코드 형식으로 변환한다.
+        document.write("[escape 인코딩 결과]<br/>");
+        document.write(escape("인코딩, escape")+"<br/>");
+        document.write(unescape(escape("인코딩, escape"))+"<br><br>");
+
+        //encodeURI(), decodeURI()
+        //url 주소표시 특수문자 인코딩하지 않음.
+        //주소를 통해 넘기는 파라미터 인코딩할 때 사용
+        document.write("[URI 인코딩]<br/>");
+        document.write(escape("http://가나다라.com")+"<br/>");
+        document.write(encodeURI("http://가나다라.com")+"<br>");
+        document.write(decodeURI(encodeURI("http://가나다라.com"))+"<br><br>");
+
+        //encodeURLComponent(), decodeURLComponent()
+        document.write("[URLComponent 인코딩]<br>");
+        document.write(encodeURI("http://mainia.tistory.com?id=홍길동&phone=010")+"<br>");
+        document.write(encodeURIComponent("http://mainia.tistory.com?id=홍길동&phone=010")+"<br>");
+        document.write(decodeURIComponent(encodeURIComponent("http://mainia.tistory.com?id=홍길동&phone=010")+"<br>"));
+    </script>
+</body>
+</html>
