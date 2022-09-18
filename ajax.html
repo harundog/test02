@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <input type="button" id="btn" value="실행" >
+    <input type="button" id="btn2" value="output" >
+    <script>
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", loadAjax);
+        btn2.addEventListener("click", output);
+        function loadAjax(){
+            var url = "http://localhost:8000/test/test.txt";
+            var xhr = new XMLHttpRequest();
+            
+            xhr.onreadystatechange = function(){
+                console.log(xhr.readyState);
+                alert(xhr.readyState);
+                if(xhr.readyState == 4){
+                    if(xhr.status == 200){
+                        setTimeout(sayHi, 1000);
+                        document.getElementById("demo").innerHTML = xhr.responseText;
+                    }
+                }
+            };
+            xhr.open("get", url, true);
+            xhr.send(null);
+         
+
+        }
+        function sayHi() {
+            for(var i = 0; i < 2000000000; i++){
+                    
+            }
+            console.log(">>>>>>>..");
+        }
+        function output(){
+            console.log("output.......");
+        }
+    </script>
+</body>
+</html>
